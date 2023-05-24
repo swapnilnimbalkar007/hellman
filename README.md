@@ -1,28 +1,38 @@
-import java.util.Scanner;
+<html>
 
-public class MovieBookingSystem {
-  static int availableSeats = 20;
+<head></head>
 
-  public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
+<body>
+    <label for="">Enter P</label>
+    <input type="text" id="p"> <br>
+    <label for="">Enter G</label>
+    <input type="text" name="" id="g"> <br>
+    <label for="">deffi</label>
+    <textarea name="" id="text" cols="30" rows="10" readonly></textarea>
+    <button onclick="clickme()">getkey</button>
 
-    System.out.println("Welcome to the Movie Ticket Booking System");
-    System.out.println("Available seats: " + availableSeats);
+    <script>
+        function isPrim(n) {
 
-    while (true) {
-      System.out.print("Enter the number of seats to book (or 0 to exit): ");
-      int numSeats = sc.nextInt();
-      if (numSeats == 0) {
-        break;
-      }
-      if (numSeats > availableSeats) {
-        System.out.println("Sorry, we only have " + availableSeats + " seats available.");
-      } else {
-        availableSeats -= numSeats;
-        System.out.println("Booking confirmed! Enjoy the movie.");
-        System.out.println("Available seats: " + availableSeats);
-      }
-    }
-    System.out.println("Thanks for using the movie ticket booking system.");
-  }
-}
+        }
+        function clickme() {
+            var p = document.getElementById("p").value;
+            var g = document.getElementById("g").value;
+
+
+
+            var privatekeyofallic = 10;
+            var privatekeyofbob = 8;
+
+            x = Math.pow(g, privatekeyofallic) % p;
+            y = Math.pow(g, privatekeyofbob) % p;
+
+            secretekeyofalic = Math.pow(y, privatekeyofallic) % p;
+            secretekeyofbob = Math.pow(x, privatekeyofbob) % p;
+
+            document.getElementById("text").value = "Secrete key of alic: " + secretekeyofalic + "\n" + "Secrete ket key of bob: " + secretekeyofbob
+        }
+    </script>
+</body>
+
+</html>
